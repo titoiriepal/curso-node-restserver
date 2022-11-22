@@ -6,6 +6,7 @@ const encriptarPassword = (password) =>{
     return bcryptjs.hashSync( password, salt)
 }
 
+
 module.exports = {
     encriptarPassword
 }
