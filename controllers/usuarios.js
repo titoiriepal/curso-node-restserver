@@ -78,25 +78,33 @@ const usuariosPatch = (req, res = response) => {
         msg: 'Patch API - controlador'
     })
   }
+
+
+
+
 const usuariosDelete = async(req, res = response) => {
 
     const {id} = req.params;
 
-    
+    const uid = req.uid;
 
     //Borrado físico
-        //const usuario = await Usuario.findByIdAndDelete(id);
+    //const usuario = await Usuario.findByIdAndDelete(id);
 
-    //Cambiar estado activo
+    //Cambiar estado activo 
+    const usuario = await Usuario.findByIdAndUpdate( id, {estado : false});
 
     
-    let usuario = await Usuario.findByIdAndUpdate( id, {estado : false});
-     usuario = await Usuario.findById( id )
+    
     res.status(200).json({
         msg : `Usuario ${id} borrado correctamente`,
         usuario
+        
     })
   }
+
+
+
 
 
 module.exports ={
