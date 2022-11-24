@@ -32,8 +32,6 @@ const tieneRole = ( ...roles ) =>{
 
     return (req, res = response, next) =>{
 
-        console.log(req.usuario.rol);
-
         if ( !req.usuario){
 
             return res.status(500).json({
