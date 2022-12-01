@@ -4,8 +4,11 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 
 
-const { login, googleSingIn } = require('../controllers/auth');
+
 const { validarCampos } = require('../middlewares/validar-campos');
+
+
+const { login, googleSingIn } = require('../controllers/auth');
 
 
 
