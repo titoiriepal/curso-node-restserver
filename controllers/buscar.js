@@ -80,7 +80,7 @@ const buscarProductos = async( termino = '', res = response) =>{
 
     const regex = new RegExp( termino, 'i')
 
-    const producto = await Producto.find({ nombre : regex, estado:true });
+    const producto = await Producto.find({ nombre : regex, estado:true }).populate('categoria','nombre');
     const numProducto = await Producto.count({ nombre : regex, estado:true });
 
     return res.json({
